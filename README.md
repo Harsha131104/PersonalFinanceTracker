@@ -32,34 +32,19 @@ The application provides three levels of spending alerts:
 
 ## Installation
 
-### Option 1: Using Makefile (Recommended)
-```bash
-# Clone or download the project files
-# Navigate to the project directory
-
-# Compile the application
-make
-
-# Run the application
-./expense_tracker
-
-# Or compile and run in one step
-make run
-```
-
-### Option 2: Manual Compilation
+### Option 1: Manual Compilation
 ```bash
 # Compile using g++
-g++ -std=c++17 -Wall -Wextra -O2 -o expense_tracker expense_tracker.cpp
+g++ expense_tracker.cpp
 
 # Run the application
 ./expense_tracker
 ```
 
-### Option 3: Windows (MinGW)
+### Option 2: Windows (MinGW)
 ```cmd
 # Compile using MinGW g++
-g++ -std=c++17 -Wall -O2 -o expense_tracker.exe expense_tracker.cpp
+g++ expense_tracker.cpp
 
 # Run the application
 expense_tracker.exe
@@ -72,15 +57,16 @@ When you run the application, you'll see a menu with the following options:
 
 ```
 ╔══════════════════════════════════════════════╗
-║          EXPENSE & SAVINGS TRACKER           ║
+║       ADVANCED EXPENSE & SAVINGS TRACKER     ║
 ╠══════════════════════════════════════════════╣
 ║ 1. Add Transaction Manually                  ║
 ║ 2. Load from Excel/CSV File                  ║
 ║ 3. View All Transactions                     ║
-║ 4. View Category Summary                     ║
-║ 5. Check Spending Alerts                     ║
+║ 4. View Category Analysis                    ║
+║ 5. Check Spending Alerts & Analysis          ║
 ║ 6. Export Data to CSV                        ║
-║ 7. Exit                                      ║
+║ 7. Set Budget Limits                         ║
+║ 8. Exit                                      ║
 ╚══════════════════════════════════════════════╝
 ```
 
@@ -115,7 +101,6 @@ A sample CSV file (`sample_financial_data.csv`) is provided for testing:
 expense-tracker/
 ├── expense_tracker.cpp          # Main application source code
 ├── sample_financial_data.csv    # Sample data for testing
-├── Makefile                     # Build automation
 ├── README.md                    # This documentation
 ├── financial_data.csv           # Auto-generated data file (created on first run)
 └── exported_data.csv            # Example of exported data (user-created)
@@ -192,17 +177,6 @@ If you encounter issues:
 
 ## Development
 
-### Building from Source
-```bash
-# Debug build with additional symbols
-make debug
-
-# Clean build files
-make clean
-
-# Install system-wide (Linux/macOS)
-sudo make install
-```
 
 ### Code Structure
 - **ExpenseTracker Class**: Main application logic
