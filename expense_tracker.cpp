@@ -1,5 +1,5 @@
-
 #include <iostream>
+#include <windows.h>
 #include <fstream>
 #include <vector>
 #include <string>
@@ -650,6 +650,7 @@ void displayMenu() {
 }
 
 int main() {
+    SetConsoleOutputCP(CP_UTF8);
     ExpenseTracker tracker;
     int choice;
 
